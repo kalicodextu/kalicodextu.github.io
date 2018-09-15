@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Tags on My New Hugo Site</title>
-    <link>http://kalicodextu.github.io/tags/</link>
-    <description>Recent content in Tags on My New Hugo Site</description>
+    <title>Tags on 徐小妍小开心</title>
+    <link>https://kalicodextu.github.io/tags/</link>
+    <description>Recent content in Tags on 徐小妍小开心</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
+    <language>zh-CN</language>
     
-	<atom:link href="http://kalicodextu.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://kalicodextu.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
     
     
   </channel>

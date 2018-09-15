@@ -3,17 +3,32 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>http://kalicodextu.github.io/categories/</loc>
+    <loc>https://kalicodextu.github.io/schedule/</loc>
+    <lastmod>2018-09-16T02:27:35+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://kalicodextu.github.io/about/</loc>
+    <lastmod>2018-09-16T02:19:58+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://kalicodextu.github.io/archives/</loc>
+  </url>
+  
+  <url>
+    <loc>https://kalicodextu.github.io/categories/</loc>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://kalicodextu.github.io/</loc>
+    <loc>https://kalicodextu.github.io/tags/</loc>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://kalicodextu.github.io/tags/</loc>
+    <loc>https://kalicodextu.github.io/</loc>
+    <lastmod>2018-09-16T02:27:35+08:00</lastmod>
     <priority>0</priority>
   </url>
   

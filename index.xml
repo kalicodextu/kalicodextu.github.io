@@ -1,14 +1,42 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>My New Hugo Site</title>
-    <link>http://kalicodextu.github.io/</link>
-    <description>Recent content on My New Hugo Site</description>
+    <title>徐小妍小开心</title>
+    <link>https://kalicodextu.github.io/</link>
+    <description>Recent content on 徐小妍小开心</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
+    <language>zh-CN</language>
+    <lastBuildDate>Sun, 16 Sep 2018 02:27:35 +0800</lastBuildDate>
     
-	<atom:link href="http://kalicodextu.github.io/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://kalicodextu.github.io/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Schedule</title>
+      <link>https://kalicodextu.github.io/schedule/</link>
+      <pubDate>Sun, 16 Sep 2018 02:27:35 +0800</pubDate>
+      
+      <guid>https://kalicodextu.github.io/schedule/</guid>
+      <description>旅游计划 &amp;hellip;  </description>
+    </item>
+    
+    <item>
+      <title>About</title>
+      <link>https://kalicodextu.github.io/about/</link>
+      <pubDate>Sun, 16 Sep 2018 02:19:58 +0800</pubDate>
+      
+      <guid>https://kalicodextu.github.io/about/</guid>
+      <description>小妍妍</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://kalicodextu.github.io/archives/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://kalicodextu.github.io/archives/</guid>
+      <description>title: &amp;ldquo;归档&amp;rdquo; description: pythoner ，gocoder，love math，algorithm type: archives</description>
+    </item>
     
   </channel>
 </rss>
