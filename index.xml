@@ -6,10 +6,40 @@
     <description>Recent content on 徐小妍小开心</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Sun, 16 Sep 2018 02:47:11 +0800</lastBuildDate>
+    <lastBuildDate>Sun, 16 Sep 2018 02:52:48 +0800</lastBuildDate>
     
 	<atom:link href="https://kalicodextu.github.io/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Gin</title>
+      <link>https://kalicodextu.github.io/post/gin/</link>
+      <pubDate>Sun, 16 Sep 2018 02:52:48 +0800</pubDate>
+      
+      <guid>https://kalicodextu.github.io/post/gin/</guid>
+      <description>Gin Web框架 Gin是一个用Golang写的一个web框架。它是类似Martin风格的API，因为httprouter,Gin的性能快了近40倍。高性能，良好的生产力。
+安装 在安装Gin之前，首先需要安装Go的环境，配置好工作区。在此已部署好Go环境 1. 下载安装
+$ go get -u github.com/gin-gonic/gin   在代码中导入 golang import &amp;quot;github.com/gin-gonic/gin&amp;quot;  导入net/http. 在使用http.StatusOk等一些常量的时候
+import &amp;quot;net/http&amp;quot;  使用Govendor依赖管理工具 下载安装govendor
+go get github.com/kardianos/govendor  创建项目文件夹，并进入目录
+$ mkdir -p $GOPATH/src/github.com/myusername/project &amp;amp;&amp;amp; cd &amp;quot;$_&amp;quot;  使用vendor初始化项目，并且加入gin
+$ govendor init $ govendor fetch github.com/gin-gonic/gin@v1.3  复制一个示例模板到项目中
+$ curl https://raw.githubusercontent.com/gin-gonic/gin/master/examples/basic/main.go &amp;gt; main.go  运行项目
+$ go run main.go  golang版本需求 需要 Go 1.6以上版本，后续可能需要1.7，最好用最新的稳定版
+快速入门 新建一个main.go的文件，代码如下 ```golang package main</description>
+    </item>
+    
+    <item>
+      <title>化妆</title>
+      <link>https://kalicodextu.github.io/post/%E5%8C%96%E5%A6%86/</link>
+      <pubDate>Sun, 16 Sep 2018 02:50:15 +0800</pubDate>
+      
+      <guid>https://kalicodextu.github.io/post/%E5%8C%96%E5%A6%86/</guid>
+      <description> 化妆顺序  第一步，首先，洗干净脸部肌肤。大家在涂抹任何护肤品之前，一定要先做好洁面工作。这样后续涂抹上的护肤品才能更好地被肌肤吸收。一般情况下，我们在清晨和晚间的时候涂抹护肤品比较合适 * 清晨，正是我们睡了一夜刚起床的时候，此时不少朋友脸上会比较油腻，这时用洗面奶洗一下脸会比较好。但是如果皮肤不油腻难受的话，就直接用清水洗一下就好了 * 晚间的时候一般用洗面奶清洗一下皮肤会比较好，因为我们在外面奔波了一整天，脸上肯定沾上了不少尘灰，一定要彻底清洁一下，才能让护肤品顺利进入我们的肌肤中去。
+第二步，涂抹化妆水。 * 大家可以倒一些化妆水在手上，将它们涂抹到皮肤上，然后再轻轻拍打脸部肌肤直至被皮肤完全吸收。不少朋友也用化妆棉沾取化妆水，敷在脸上，也可以起到同样的补水效果。 第三步，涂抹精华液。 * 化妆水主要是要用来给我们的皮肤补水，乳液则是用来锁住我们肌肤的水分，防止它们流失的。精华液并不是必需的护肤品，大家要根据自己的肤质状况来判断自己是否需要涂抹精华液和需要哪种类型的精华液。 * 如果需要涂抹的话，精华液要放在化妆水后涂抹，因为只有补水工作做好了，精华液中的营养分子才能更好地被吸收。涂抹完精华液后，可以适当按摩下涂抹的部位，也是有助于精华液被更好地吸收。 最后一步是涂抹适量的乳液。 * 将乳液放在最后来涂抹，是为了更好地锁住皮肤中的水分，防止水分过快流失。不过，乳液的保湿效果没有霜膏类的好，因为霜膏质地粘稠，封闭性好，可以长久维持水嫩肌肤。
+其它一些链接
+  水和精华液哪个先用 水和精华液的正确使用顺序 http://www.360doc.com/content/18/0325/06/1315667_739967134.shtml  </description>
+    </item>
     
     <item>
       <title>Golang编程</title>
