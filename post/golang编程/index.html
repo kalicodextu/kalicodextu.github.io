@@ -1,0 +1,835 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+
+    <meta charset="utf-8">
+    <meta name="generator" content="Hugo 0.48" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Golang编程 | 徐小妍小开心</title>
+    <meta property="og:title" content="Golang编程 - 徐小妍小开心">
+    <meta property="og:type" content="article">
+        
+    <meta property="article:published_time" content="2018-09-16T02:47:11&#43;08:00">
+        
+        
+    <meta property="article:modified_time" content="2018-09-16T02:47:11&#43;08:00">
+        
+    <meta name="Keywords" content="golang,go语言,go语言笔记,徐小妍,python,Docker,博客,Linux,python,软件架构,公众号,小程序">
+    <meta name="description" content="Golang编程">
+        
+    <meta name="author" content="kalicodextu">
+    <meta property="og:url" content="https://kalicodextu.github.io/post/golang%E7%BC%96%E7%A8%8B/">
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+
+    <link rel="stylesheet" href="/css/normalize.css">
+    
+    <link rel="stylesheet" href="/css/prism.css">
+    
+    <link rel="stylesheet" href="/css/style.css">
+    <script type="text/javascript" src="//cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+</head>
+
+<body>
+<header id="header" class="clearfix">
+    <div class="container">
+        <div class="col-group">
+            <div class="site-name ">
+                
+                    <a id="logo" href="https://kalicodextu.github.io">
+                        徐小妍小开心
+                    </a>
+                
+                <p class="description">精通Python、Go语言、Docker、Linux、网络安全的书籍购买</p>
+            </div>
+            <div>
+                <nav id="nav-menu" class="clearfix">
+                    <a class="current" href="https://kalicodextu.github.io">首页</a>
+                    
+                    <a  href="/schedule/" title="进度">进度</a>
+                    
+                    <a  href="/archives/" title="归档">归档</a>
+                    
+                    <a  href="/about/" title="关于">关于</a>
+                    
+                </nav>
+            </div>
+        </div>
+    </div>
+</header>
+
+
+<div id="body">
+    <div class="container">
+        <div class="col-group">
+
+            <div class="col-8" id="main">
+                <div class="res-cons">
+                    <article class="post">
+                        <header>
+                            <h1 class="post-title">Golang编程</h1>
+                        </header>
+                        <date class="post-meta meta-date">
+                            2018年9月16日
+                            02:47
+                        </date>
+                        
+                        
+                        <div class="post-content">
+                            
+
+<h1 id="go-学习笔记">Go 学习笔记</h1>
+
+<h2 id="什么是go">什么是Go</h2>
+
+<p>Go是一门 并发支持 、垃圾回收 的 编译型 系统编程语言，旨在创
+造一门具有在静态编译语言的 高性能 和动态语言的 高效开发 之间拥有
+良好平衡点的一门编程语言。</p>
+
+<h2 id="go-的特点">Go 的特点</h2>
+
+<ul>
+<li>类型安全 和 内存安全</li>
+<li>以非常直观和极低代价的方案实现 高并发</li>
+<li>高效的垃圾回收机制</li>
+<li>快速编译（同时解决C语言中头文件太多的问题）</li>
+<li>为多核计算机提供性能提升的方案</li>
+
+<li><p><strong>UTF-8编码支持</strong></p>
+
+<h2 id="gopath">GOPATH</h2>
+
+<p>根据约定，GOPATH下需要建立3个目录：</p></li>
+
+<li><p>bin（存放编译后生成的可执行文件）</p></li>
+
+<li><p>pkg（存放编译后生成的包文件）</p></li>
+
+<li><p>src（存放项目源码）</p>
+
+<h2 id="go-常用的命令">Go 常用的命令</h2></li>
+
+<li><p>go get：获取远程包（需 提前安装 git或hg）</p></li>
+
+<li><p>go run：直接运行程序</p></li>
+
+<li><p>go build：测试编译，检查是否有编译错误</p></li>
+
+<li><p>go fmt：格式化源码（部分IDE在保存时自动调用）</p></li>
+
+<li><p>go install：编译包文件并编译整个程序</p></li>
+
+<li><p>go test：运行测试文件</p></li>
+
+<li><p>go doc：查看文档（CHM手册）</p></li>
+</ul>
+
+<p>本地官网搭建</p>
+
+<pre><code class="language-shell">godoc -http=:8080
+</code></pre>
+
+<h2 id="go-内置关键字">Go 内置关键字</h2>
+
+<p>（25个均为小写）</p>
+
+<p><code>break</code> <code>default</code> <code>func</code> <code>interface</code> <code>select</code> <code>case</code> <code>defer</code> <code>go</code> <code>map</code> <code>struct</code> <code>chan</code> <code>else</code> <code>goto</code> <code>package</code> <code>switch</code> <code>const</code> <code>fallthrough</code> <code>if</code> <code>range</code> <code>type</code> <code>continue</code> <code>for</code> <code>import</code> <code>return</code> <code>var</code></p>
+
+<h2 id="go-注释">Go 注释</h2>
+
+<ul>
+<li>// ：单行注释</li>
+
+<li><p>/* */：多行注释</p>
+
+<h2 id="go-程序的一般结构">Go 程序的一般结构</h2>
+
+<p><strong>basic_structure.go</strong></p></li>
+
+<li><p>Go程序是通过 package 来组织的（与python类似）</p></li>
+
+<li><p>只有 package 名称为 main 的包可以包含 main 函数</p></li>
+
+<li><p>一个可执行程序 有且仅有 一个 main 包</p></li>
+
+<li><p>通过 import 关键字来导入其它非 main 包</p></li>
+
+<li><p>通过 const 关键字来进行常量的定义</p></li>
+
+<li><p>通过在函数体外部使用 var 关键字来进行全局变量的声明与赋值</p></li>
+
+<li><p>通过 type 关键字来进行结构(struct)或接口(interface)的声明</p></li>
+
+<li><p>通过 func 关键字来进行函数的声明</p>
+
+<h2 id="go的package">Go的package</h2>
+
+<h3 id="package的导入">package的导入</h3></li>
+
+<li><p>可以多次导入</p>
+
+<pre><code class="language-golang">import &quot;os&quot;
+import &quot;fmt&quot;
+</code></pre></li>
+
+<li><p>一次导入</p>
+
+<pre><code class="language-golang">import (
+&quot;os&quot;
+&quot;fmt&quot;
+)
+</code></pre></li>
+
+<li><p>注意</p></li>
+</ul>
+
+<p>导入package未使用，编译会出错</p>
+
+<h3 id="package-别名">package 别名</h3>
+
+<ul>
+<li>用字符替换
+<code>golang
+import std &quot;fmt&quot;
+std.Println(&quot;Hello world&quot;)
+</code>
+主要用来区分导入的相似包，或者为一些包指定功能名方便使用</li>
+
+<li><p>省略调用</p>
+
+<pre><code class="language-golang">import . &quot;fmt&quot;
+Println(&quot;Hello world&quot;)
+</code></pre>
+
+<p>使用<code>.</code>作为别名，不推荐使用</p>
+
+<h2 id="可见性规则">可见性规则</h2>
+
+<p>Go语言中，使用 大小写 来决定该 常量、变量、类型、接口、结构
+或函数 是否可以被外部包所调用。
+根据约定：</p></li>
+
+<li><p>函数名首字母 小写 即为private</p></li>
+
+<li><p>函数名首字母 大写 即为public</p></li>
+</ul>
+
+<h2 id="go-基本类型">Go 基本类型</h2>
+
+<ul>
+<li><p>布尔型：bool</p>
+
+<ul>
+<li>长度：1字节</li>
+<li>取值范围：true, false</li>
+<li>注意事项：不可以用数字代表true或false</li>
+</ul></li>
+
+<li><p>整型：int/uint</p>
+
+<ul>
+<li>根据运行平台可能为32或64位</li>
+</ul></li>
+
+<li><p>8位整型：int8/uint8</p>
+
+<ul>
+<li>长度：1字节</li>
+<li>取值范围：-128~<sup>127</sup>&frasl;<sub>0</sub>~255</li>
+</ul></li>
+
+<li><p>字节型：byte（uint8别名）</p></li>
+
+<li><p>16位整型：int16/uint16</p>
+
+<ul>
+<li>长度：2字节</li>
+<li>取值范围：-32768~<sup>32767</sup>&frasl;<sub>0</sub>~65535</li>
+</ul></li>
+
+<li><p>32位整型：int32（rune）/uint32</p>
+
+<ul>
+<li>长度：4字节</li>
+<li>取值范围：-2^<sup>32</sup>&frasl;<sub>2</sub>~2^<sup>32</sup>&frasl;<sub>2</sub>-<sup>1</sup>&frasl;<sub>0</sub>~2^32-1</li>
+</ul></li>
+
+<li><p>64位整型：int64/uint64</p>
+
+<ul>
+<li>长度：8字节</li>
+<li>取值范围：-2^<sup>64</sup>&frasl;<sub>2</sub>~2^<sup>64</sup>&frasl;<sub>2</sub>-<sup>1</sup>&frasl;<sub>0</sub>~2^64-1</li>
+</ul></li>
+
+<li><p>浮点型：float32/float64</p>
+
+<ul>
+<li>长度：4/8字节</li>
+<li>小数位：精确到7/15小数位</li>
+</ul></li>
+
+<li><p>复数：complex64/complex128</p>
+
+<ul>
+<li>长度：8/16字节</li>
+</ul></li>
+
+<li><p>足够保存指针的 32 位或 64 位整数型：uintptr</p></li>
+
+<li><p>其它值类型：</p>
+
+<ul>
+<li>array、struct、string</li>
+</ul></li>
+
+<li><p>引用类型：</p>
+
+<ul>
+<li>slice、map、chan</li>
+</ul></li>
+
+<li><p>接口类型：inteface</p></li>
+
+<li><p>函数类型：func</p></li>
+</ul>
+
+<h2 id="类型零值">类型零值</h2>
+
+<p>零值并不等于空值，而是当变量被声明为某种类型后的默认值，
+通常情况下值类型的默认值为0，bool为false，string为空字符串</p>
+
+<h2 id="类型别名">类型别名</h2>
+
+<p>使用<code>type</code></p>
+
+<pre><code class="language-golang">type (
+    KB int8
+)
+</code></pre>
+
+<h2 id="单个变量的声明与赋值">单个变量的声明与赋值</h2>
+
+<ul>
+<li>变量的声明格式：var &lt;变量名称&gt; &lt;变量类型&gt;</li>
+<li>变量的赋值格式：&lt;变量名称&gt; = &lt;表达式&gt;</li>
+<li>声明的同时赋值：var &lt;变量名称&gt; [变量类型] = &lt;表达式&gt;</li>
+</ul>
+
+<h2 id="多个变量的声明与赋值">多个变量的声明与赋值</h2>
+
+<ul>
+<li>全局变量的声明可使用 var() 的方式进行简写</li>
+<li>全局变量的声明不可以省略 var，但可使用并行方式</li>
+<li>所有变量都可以使用类型推断</li>
+<li>局部变量不可以使用 var() 的方式简写，只能使用并行方式</li>
+</ul>
+
+<h2 id="变量的类型转换">变量的类型转换</h2>
+
+<ul>
+<li><strong>Go中不存在隐式转换，所有类型转换必须显式声明</strong></li>
+<li>==<strong>转换只能发生在两种相互兼容的类型之间</strong>==</li>
+
+<li><p>类型转换的格式：
+<ValueA> [:]= <TypeOfValueA>(<ValueB>)</p>
+
+<h3 id="一个问题-数字转字符串">一个问题：数字转字符串</h3>
+
+<p>```golang
+package main</p></li>
+</ul>
+
+<p>import &ldquo;fmt&rdquo;</p>
+
+<p>func main() {
+	var a = 65
+	b := string(a)
+	fmt.Println(b)
+}</p>
+
+<pre><code>Consle
+```shell
+A
+</code></pre>
+
+<blockquote>
+<p>string() 表示将数据转换成文本格式，因为计算机中存储的任何东西
+本质上都是数字，因此此函数自然地认为我们需要的是用数字65表示
+的文本 A。</p>
+
+<h3 id="解决办法">解决办法</h3>
+
+<p>引入<code>strconv</code>包</p>
+
+<pre><code class="language-golang">package main
+
+import (
+	&quot;fmt&quot;
+	&quot;reflect&quot;
+	&quot;strconv&quot;
+)
+
+func main() {
+	var a = 65
+	b := strconv.Itoa(a)
+	fmt.Println(b)
+	_type := reflect.TypeOf(b)
+	fmt.Println(_type)
+}
+</code></pre>
+
+<p>Console</p>
+
+<pre><code class="language-shell">$ go run main.go
+65
+string
+
+</code></pre>
+</blockquote>
+
+<h2 id="常量的定义">常量的定义</h2>
+
+<ul>
+<li>常量的值在编译时就已经确定</li>
+<li>常量的定义格式与变量基本相同</li>
+<li>等号右侧必须是==常量==或者==常量表达式==</li>
+<li>==常量表达式中的函数必须是内置函数==</li>
+</ul>
+
+<h2 id="常量的初始化规则与枚举">常量的初始化规则与枚举</h2>
+
+<ul>
+<li>在定义常量组时，如果不提供初始值，则表示将使用上行的表达式</li>
+<li>使用相同的表达式不代表具有相同的值</li>
+<li>iota是常量的计数器，从0开始，组中每定义1个常量自动递增1</li>
+<li>通过初始化规则与iota可以达到枚举的效果</li>
+<li>每遇到一个const关键字，iota就会重置为0</li>
+</ul>
+
+<h2 id="运算符">运算符</h2>
+
+<p>Go中的运算符均是从左至右结合
+优先级（从高到低）：
+- <code>^</code> <code>!</code>  （一元运算符）
+- <code>*</code> <code>/</code> <code>%</code> <code>&lt;&lt;</code> <code>&gt;&gt;</code> <code>&amp;</code> <code>&amp;^</code>
+- <code>+</code> <code>-</code> <code>|</code> <code>^</code> （二元运算符）
+- <code>==</code> <code>!=</code> <code>&lt;</code> <code>&lt;=</code> <code>&gt;=</code> <code>&gt;</code>
+- <code>&lt;-</code> （专门用于channel）
+- <code>&amp;&amp;</code>
+- <code>||</code></p>
+
+<blockquote>
+<p>问题：
+请尝试结合常量的iota与&lt;&lt;运算符实现计算机储存单位的枚举</p>
+</blockquote>
+
+<pre><code class="language-golang">const (
+    _          = iota
+    KB float64 = 1 &lt;&lt; (iota * 10)  
+    MB
+    GB
+    TB
+    PB
+    EB
+    ZB
+    YB
+)
+</code></pre>
+
+<h2 id="指针">指针</h2>
+
+<p>Go虽然保留了指针，但与其它编程语言不同的是，在Go当中不支持指针运算以及<code>-&gt;</code>运算符，而直接采用<code>.</code>选择符来操作指针目标对象的成员</p>
+
+<ul>
+<li>操作符”&amp;”取变量地址，使用<code>*</code>通过指针间接访问目标对象</li>
+<li>默认值为<code>nil</code>而非<code>NULL</code></li>
+</ul>
+
+<h2 id="递增递减语句">递增递减语句</h2>
+
+<p>在Go当中，++ 与 &ndash; 是作为语句而并不是作为表达式</p>
+
+<h2 id="判断语句if">判断语句if</h2>
+
+<ul>
+<li>条件表达式没有括号</li>
+<li>支持一个初始化表达式（可以是并行方式）</li>
+<li>左大括号必须和条件语句或else在同一行</li>
+<li>支持单行模式</li>
+<li>初始化语句中的变量为block级别，同时隐藏外部同名变量</li>
+<li>1.0.3版本中的编译器BUG</li>
+</ul>
+
+<h2 id="循环语句for">循环语句for</h2>
+
+<ul>
+<li>Go只有for一个循环语句关键字，但支持3种形式</li>
+<li>初始化和步进表达式可以是多个值</li>
+<li>条件语句每次循环都会被重新检查，因此不建议在条件语句中</li>
+<li>使用函数，尽量提前计算好条件并以变量或常量代替</li>
+<li>左大括号必须和条件语句在同一行</li>
+</ul>
+
+<h2 id="选择语句switch">选择语句switch</h2>
+
+<ul>
+<li>可以使用任何类型或表达式作为条件语句</li>
+<li>不需要写break，一旦条件符合自动终止</li>
+<li>如希望继续执行下一个case，需使用fallthrough语句</li>
+<li>支持一个初始化表达式（可以是并行方式），右侧需跟分号</li>
+<li>左大括号必须和条件语句在同一行</li>
+</ul>
+
+<h2 id="跳转语句goto-break-continue">跳转语句goto, break, continue</h2>
+
+<ul>
+<li>三个语法都可以配合标签使用</li>
+<li>标签名区分大小写，若不使用会造成编译错误</li>
+<li>Break与continue配合标签可用于多层循环的跳出</li>
+<li>Goto是调整执行位置，与其它2个语句配合标签的结果并不相同</li>
+</ul>
+
+<h2 id="数组array">数组Array</h2>
+
+<ul>
+<li>定义数组的格式：var <varName> [n]<type>，n&gt;=0</li>
+<li>==数组长度也是类型的一部分，因此具有不同长度的数组为不同类型==</li>
+<li>注意区分指向数组的指针和指针数组</li>
+<li>数组在Go中为值类型</li>
+<li>==相同类型数组==之间可以使用==或!=进行比较，但不可以使用&lt;或&gt;</li>
+<li>可以使用new来创建数组，此方法返回一个指向数组的指针</li>
+<li>Go支持多维数组</li>
+</ul>
+
+<h2 id="切片">切片</h2>
+
+<ul>
+<li>其本身并不是数组，它指向底层的数组</li>
+<li>作为变长数组的替代方案，可以关联底层数组的局部或全部</li>
+<li>为引用类型</li>
+<li>可以直接创建或从底层数组获取生成</li>
+<li>使用len()获取元素个数，cap()获取容量</li>
+<li>一般使用make()创建</li>
+<li>如果多个slice指向相同底层数组，其中一个的值改变会影响全部</li>
+<li>make([]T, len, cap)</li>
+<li>其中cap可以省略，则和len的值相同</li>
+<li>len表示存数的元素个数，cap表示容量</li>
+</ul>
+
+<h3 id="reslice">Reslice</h3>
+
+<ul>
+<li>Reslice时索引以被slice的切片为准</li>
+<li>索引不可以超过被slice的切片的容量cap()值</li>
+<li>索引越界不会导致底层数组的重新分配而是引发错误</li>
+</ul>
+
+<h3 id="append">Append</h3>
+
+<ul>
+<li>可以在slice尾部追加元素</li>
+<li>可以将一个slice追加在另一个slice尾部</li>
+<li>==如果最终长度未超过追加到slice的容量则返回原始slice==</li>
+<li>==如果超过追加到的slice的容量则将重新分配数组并拷贝原始数据==</li>
+</ul>
+
+<p>注意：
+&gt; 如果两个slice指向同一个原始数组，他们是共享内存地址的，但是如果slice追加超过容量，则他们将指向不同的底层数组，他们不会共享内存。造成影响是他们元素改变是独立的。</p>
+
+<h2 id="copy">Copy</h2>
+
+<p>如果长度不同，copy只会去最少长度copy，因为会受到容量限制。</p>
+
+<p>注意：
+&gt; copy后的两个slice还是指向原来的底层数组。</p>
+
+<h2 id="map">map</h2>
+
+<ul>
+<li>类似其它语言中的哈希表或者字典，以key-value形式存储数据</li>
+<li>Key必须是支持==或!=比较运算的类型，不可以是函数、map或slice</li>
+<li>Map查找比线性搜索快很多，但比使用索引访问数据的类型慢100倍</li>
+<li>Map使用make()创建，支持 := 这种简写方式</li>
+<li>make([keyType]valueType, cap)，cap表示容量，可省略</li>
+<li>超出容量时会自动扩容，但尽量提供一个合理的初始值</li>
+<li>使用len()获取元素个数</li>
+<li>键值对不存在时自动添加，使用delete()删除某键值对</li>
+<li>使用 for range 对map和slice进行迭代操作</li>
+</ul>
+
+<p>注意
+&gt; for range 取出的值是值copy</p>
+
+<h3 id="线性搜索与索引访问数据">线性搜索与索引访问数据</h3>
+
+<ul>
+<li>线性搜索</li>
+</ul>
+
+<p>从一个元素序列中从头到尾检索查找目标数据，主要是用值比较</p>
+
+<ul>
+<li>索引访问数据</li>
+</ul>
+
+<p>比如数组，可以通过索引值直接获取数据。例如 a[0]为目标数据</p>
+
+<h2 id="函数function">函数function</h2>
+
+<ul>
+<li>Go 函数 不支持 嵌套、重载和默认参数</li>
+<li>但支持以下特性：
+
+<ul>
+<li>无需声明原型、不定长度变参、多返回值、命名返回值参数</li>
+<li>匿名函数、闭包</li>
+</ul></li>
+<li>定义函数使用关键字 func，且左大括号不能另起一行</li>
+<li>函数也可以作为一种类型使用</li>
+</ul>
+
+<h2 id="defer">defer</h2>
+
+<ul>
+<li>执行方式类似其它语言中的析构函数，在函数体执行结束后</li>
+<li>按照调用顺序的相反顺序逐个执行</li>
+<li>即使函数发生严重错误也会执行</li>
+<li>支持匿名函数的调用</li>
+<li>常用于资源清理、文件关闭、解锁以及记录时间等操作</li>
+<li>通过与匿名函数配合可在return之后修改函数计算结果</li>
+<li>如果函数体内某个变量作为defer时匿名函数的参数，则在定义defer时即已经获得了拷贝，否则则是引用某个变量的地址</li>
+<li>Go 没有异常机制，但有 panic/recover 模式来处理错误</li>
+<li>Panic 可以在任何地方引发，但recover只有在defer调用的函数中有效</li>
+</ul>
+
+<h2 id="结构struct">结构struct</h2>
+
+<ul>
+<li>Go 中的struct与C中的struct非常相似，并且Go没有class</li>
+<li>使用 type <Name> struct{} 定义结构，名称遵循可见性规则</li>
+<li>支持指向自身的指针类型成员</li>
+<li>支持匿名结构，可用作成员或定义成员变量</li>
+<li>匿名结构也可以用于map的值</li>
+<li>可以使用字面值对结构进行初始化</li>
+<li>允许直接通过指针来读写结构成员</li>
+<li>相同类型的成员可进行直接拷贝赋值</li>
+<li>支持 == 与 !=比较运算符，但不支持 &gt; 或 &lt;</li>
+<li>支持匿名字段，本质上是定义了以某个类型名为名称的字段</li>
+<li>嵌入结构作为匿名字段看起来像继承，但不是继承</li>
+<li>可以使用匿名字段指针</li>
+</ul>
+
+<h2 id="方法method">方法method</h2>
+
+<ul>
+<li>Go中虽没有class，但依旧有method</li>
+<li>通过显示说明receiver来实现与某个类型的组合</li>
+<li>只能为同一个包中的类型定义方法</li>
+<li>Receiver 可以是类型的值或者指针</li>
+<li>不存在方法重载</li>
+<li>==可以使用值或指针来调用方法，编译器会自动完成转换==</li>
+<li>从某种意义上来说，方法是函数的语法糖，因为receiver其实就是方法所接收的第1个参数（Method Value vs. Method Expression）</li>
+<li>如果外部结构和嵌入结构存在同名方法，则优先调用外部结构的方法</li>
+<li>类型别名不会拥有底层类型所附带的方法</li>
+<li>方法可以调用结构中的非公开字段</li>
+</ul>
+
+<h3 id="method-value-vs-method-expression">Method value VS. Method Expression</h3>
+
+<pre><code class="language-golang">package main
+
+import (
+	&quot;fmt&quot;
+)
+
+type _A struct {
+	Name string
+}
+
+func main() {
+    // Method Value
+	a := _A{Name: &quot;Alice&quot;}
+	fmt.Println(a.Name)
+	a.Rename()
+	fmt.Println(a.Name)
+	// Method EAxpression
+	b := _A{Name: &quot;Alice&quot;}
+	fmt.Println(b.Name)
+	(*_A).Rename(&amp;b)
+	fmt.Println(a.Name)
+}
+
+func (c *_A) Rename() {
+	c.Name = &quot;Bob&quot;
+}
+</code></pre>
+
+<p>output</p>
+
+<pre><code class="language-shell">Alice
+Bob
+Alice
+Bob
+</code></pre>
+
+<h2 id="接口interface">接口interface</h2>
+
+<ul>
+<li>接口是一个或多个方法签名的集合</li>
+<li>只要某个类型拥有该接口的所有方法签名，即算实现该接口，无需显示</li>
+<li>声明实现了哪个接口，这称为 Structural Typing</li>
+<li>接口只有方法声明，没有实现，没有数据字段</li>
+<li>接口可以匿名嵌入其它接口，或嵌入到结构中</li>
+<li>将对象赋值给接口时，会发生拷贝，而接口内部存储的是指向这个</li>
+<li>复制品的指针，既无法修改复制品的状态，也无法获取指针</li>
+<li>只有当接口存储的类型和对象都为nil时，接口才等于nil</li>
+<li>接口调用不会做receiver的自动转换</li>
+<li>接口同样支持匿名字段方法</li>
+<li>接口也可实现类似OOP中的多态</li>
+<li>空接口可以作为任何类型数据的容器</li>
+<li>类型断言
+
+<ul>
+<li>通过类型断言的ok pattern可以判断接口中的数据类型
+使用type switch则可针对空接口进行比较全面的类型判断</li>
+</ul></li>
+<li>接口转换
+
+<ul>
+<li>可以将拥有超集的接口转换为子集的接口</li>
+</ul></li>
+</ul>
+
+<p>延伸阅读</p>
+
+<p><a href="www.ituring.com.cn/article/37642">评:为什么我不喜欢Go语言式的接口</a></p>
+
+<h2 id="反射reflection">反射reflection</h2>
+
+<ul>
+<li>反射可大大提高程序的灵活性，使得 interface{} 有更大的发挥余地</li>
+<li>反射使用 TypeOf 和 ValueOf 函数从接口中获取目标对象信息</li>
+<li>反射会将匿名字段作为独立字段（匿名字段本质）</li>
+<li>想要利用反射修改对象状态，前提是 interface.data 是 settable，即 pointer-interface</li>
+<li>通过反射可以“动态”调用方法</li>
+</ul>
+
+                        </div>
+
+                        
+
+<div class="post-archive">
+    <h2>See Also</h2>
+    <ul class="listing">
+        
+        <li><a href="/schedule/">Schedule</a></li>
+        
+        <li><a href="/about/">About</a></li>
+        
+        <li><a href="/archives/"></a></li>
+        
+    </ul>
+</div>
+
+
+                        <div class="post-meta meta-tags">
+                            
+                            没有标签
+                            
+                        </div>
+                    </article>
+                    
+                </div>
+            </div>
+            <div id="secondary">
+    <section class="widget">
+        <form id="search" action="//www.google.com/search" method="get" accept-charset="utf-8" target="_blank" _lpchecked="1">
+      
+      <input type="text" name="q" maxlength="20" placeholder="Search">
+      <input type="hidden" name="sitesearch" value="https://kalicodextu.github.io">
+      <button type="submit" class="submit icon-search"></button>
+</form>
+    </section>
+    
+    <section class="widget">
+        <h3 class="widget-title">最近文章</h3>
+        <ul class="widget-list">
+            
+            <li>
+                <a href="https://kalicodextu.github.io/post/golang%E7%BC%96%E7%A8%8B/" title="Golang编程">Golang编程</a>
+            </li>
+            
+        </ul>
+    </section>
+
+    <section class="widget">
+        <h3 class="widget-title">分类</h3>
+        <ul class="widget-list">
+            
+        </ul>
+    </section>
+
+    <section class="widget">
+            <h3 class="widget-title">标签</h3>
+            <div class="tagcloud">
+                
+            </div>
+        </section>
+
+    
+    <section class="widget">
+        <h3 class="widget-title">友情链接</h3>
+        <ul class="widget-list">
+            
+            <li>
+                <a rel="noreferrer noopener nofollow" href="http://yuedu.baidu.com/ebook/14a722970740be1e640e9a3e" title="Android Gradle权威指南">Android Gradle权威指南</a>
+            </li>
+            
+            <li>
+                <a rel="noreferrer noopener nofollow" href="http://mirrors.flysnow.org/" title="常用开发工具CDN镜像">常用开发工具CDN镜像</a>
+            </li>
+            
+        </ul>
+    </section>
+    
+
+    <section class="widget">
+        <h3 class="widget-title">其它</h3>
+        <ul class="widget-list">
+            <li><a href="/index.xml">文章 RSS</a></li>
+        </ul>
+    </section>
+</div>
+        </div>
+    </div>
+</div>
+<footer id="footer">
+    <div class="container">
+        &copy; 2018 <a href="https://kalicodextu.github.io">徐小妍小开心</a>.
+        Powered by <a rel="nofollow noreferer noopener" href="https://gohugo.io">Hugo</a>.
+        <a href="http://www.flysnow.org/">Theme</a> based on <a href="https://github.com/rujews/maupassant-hugo">maupassant</a>.
+        
+    </div>
+</footer>
+
+
+<script type="text/javascript" src="/js/prism.js" async="true"></script>
+<script type="text/javascript">
+window.MathJax = {
+    tex2jax: {
+        inlineMath: [ ['$','$'] ],
+        processEscapes: true
+    }
+};
+</script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML' async></script>
+
+<a id="rocket" href="#top" class="show"></a>
+<script type="text/javascript" src="/js/totop.js?v=0.0.0" async=""></script>
+
+
+
+
+</body>
+</html>
